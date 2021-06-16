@@ -1,0 +1,260 @@
+:root {
+    --clr-neon: hsl(159 100% 49%);
+    --clr-bg: hsl(323 21% 16%);
+  }
+  
+  *,
+  *::before,
+  *::after {
+  	-ms-user-select: none; -webkit-user-select: none; -moz-user-select: none; -khtml-user-select: none; user-select: none;
+    box-sizing: border-box;
+  }
+  *{
+      margin:0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  
+  html{
+      text-rendering: optimizeLegibility;
+      font-size: 62.5%;
+      display: flex;
+      flex-wrap: wrap;
+  }
+  
+  body{
+      max-width: 100;
+      overflow-x: hidden;
+      margin:0;
+      padding: 0;
+  }
+  
+
+.nav { 
+ 	position: absolute; margin-top: 2%; margin-bottom: 20px; width: 100%; 
+  display: flex; flex-wrap: wrap; flex-direction: row; z-index: 10; 
+}
+
+.ul { margin-left: 21%; display: flex; flex-wrap: wrap; flex-direction: row; float: left; }
+li { list-style-type: none; margin-left: 2rem; margin-bottom: 2rem; color: #fff; font-size: 2em; }
+.li a{ 
+  text-decoration: none; font-size: 15pt; font-family: 'KoHo', sans-serif; 
+  align-content: center; padding: 0.5em 1em;
+  border: #fff 0.05em solid; border-radius: 12px; }
+/***************************************************************************/
+.li a.active{ color: #000000; background-color: #FFFFFF; }
+.li a:not(.active) { border: 2px solid #B3BEF8; }
+
+.li a:hover:not(.active) { color: #000000; background-color: #FFFFFF; }
+/***************************************************************************/
+
+  
+  .container{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      padding-top: 0;
+      animation: animate 100s ease-in-out infinite;
+      background-size: cover;
+  }
+  
+  .outer{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      padding-top: 0;
+      background: rgba(0,0,0,0.4);
+  }
+  .heading{
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      text-align: center;
+  }
+  
+  .glow{
+      font-family: Cinzel;
+      font-size: 10em;
+      color: #ffff; 
+      text-shadow: 0 0 20px #00C8C5;   
+  }
+  
+  .heading h3{
+      font-family: Brush Script Mt,sans-serif;
+      font-size: 4.0rem;
+      color: #ffff; 
+  }
+  
+  a{
+      text-decoration: none;
+      color: #fff;
+  }
+  
+  @keyframes animate{
+      0%,100%{
+          background-image: url(../img/imgonline-com-ua-resize-f5U1eWNjlS6.jpg)
+      }
+      10%
+      {
+          background-image: url(../img/pexels-kausik-das-846381.jpg)
+      }
+      20%
+      {
+          background-image: url(../img/chau-mask-2645099_1280.jpg)
+      }
+      30%
+      {
+          background-image: url(../img/imgonline-com-ua-resize-GHUAtMU5nZ.jpg)
+      }
+      40%
+      {
+          background-image: url(../img/imgonline-com-ua-resize-PJU3F7uXgDRA.jpg)
+      }
+      50%
+      {
+          background-image: url(../img/imgonline-com-ua-resize-fyqSvCcPdF34.jpg)
+      }
+      60%
+      {
+          background-image: url(../img/imgonline-com-ua-resize-R6jRS14QFUeFS.jpg)
+      }
+      70%
+      {
+          background-image: url(../img/imgonline-com-ua-resize-x9zM4VgwyLqV.jpg)
+      }
+      80%
+      {
+          background-image: url(../img/imgonline-com-ua-resize-gHG92ghJxqphfd3.jpg)
+      }
+      90%
+      {
+          background-image: url(../img/imgonline-com-ua-resize-fxfRaY74jW1Dm2G.jpg)
+      }
+  
+  }
+  
+  .contact_us{
+      text-align: justify;
+      padding-top: 5rem;
+      padding-left: 8rem;
+      padding-right: 8rem;
+      margin-top: 100vh;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5em;
+      font-weight: 70;
+      background-color: #000;
+      color:white;
+      line-height:5rem;
+  }
+  
+  .Notice{
+      font-family: Cinzel;
+      font-size: 3rem;
+      font-weight: 100;
+  }
+  p span{
+      font-family: Cinzel;
+      font-size: 3rem;
+      font-weight: 100;
+  }
+  .Notice{
+  background: linear-gradient(to right, #CCC 50%, #FF5858 50%, #CC2E5D);
+   background-size: 200%;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   transition: 0.5s ease-out;
+  }
+  
+  .Notice:hover {
+   background-position: -100%;
+  }
+  .Contact_us_heading{
+      text-align: center;
+      padding-top: 3rem;
+      padding-left: 8rem;
+      padding-right: 8rem;
+      padding-bottom: 8rem;
+      font-family: Cinzel;
+      font-size: 4em;
+      background: linear-gradient(to right, #fff 50%, #78fffd 50%, #a300de);
+      background-size: 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: 0.5s ease-out;
+  }
+  
+  .Contact_us_heading:hover {
+   background-position: -100%;
+  }
+  
+  
+  .neon-button {
+    font-size: 2rem;
+    font-family: Cinzel;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--clr-neon);
+    border: var(--clr-neon) 0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+    margin-top: 2rem;
+    margin-left: 44%;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+  
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+  
+    position: relative;
+  }
+   /*for shadow*/
+  .neon-button::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: var(--clr-neon);
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.7;
+  }
+  .neon-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.4em var(--clr-neon);
+    opacity: 0;
+    background-color: var(--clr-neon);
+    z-index: -1;
+    transition: opacity 100ms linear;
+  }
+  
+  .neon-button:hover,
+  .neon-button:focus {
+    background: var(--clr-neon);
+    color: #006627;
+    text-shadow:none ;
+  }
+  
+  .neon-button:hover::before,
+  .neon-button:focus::before {
+    opacity: 1;
+  }
+  .neon-button:hover::after,
+  .neon-button:focus::after {
+    opacity: 1;
+  }
+  
+  

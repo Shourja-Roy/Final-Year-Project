@@ -1,0 +1,852 @@
+/*body: background-image: linear-gradient(to left,rgb(0,0,0),rgb(10,15,32),rgb(21,31,63),rgb(31,46,95),
+		rgb(42,62,126),rgb(52,77,158),rgb(47,64,145),rgb(41,51,131),rgb(36,39,118),rgb(30,26,104),rgb(25,13,91),rgb(19,0,77));*/
+
+/*nav bar : background-image: linear-gradient(to left,rgb(0,0,0),rgb(10,15,32),rgb(21,31,63),rgb(31,46,95),rgb(42,62,126), 
+rgb(52,77,158),rgb(47,64,145),rgb(41,51,131),rgb(36,39,118),rgb(30,26,104),rgb(25,13,91),rgb(19,0,77));	*/
+
+/************************************************************************************************/
+@keyframes map-animate{
+	0%{ 
+		opacity: 0%; 
+		margin-left: 150px; 
+	}
+	100%{ 
+		opacity: 100%; 
+		margin-left: 0px; 
+	}
+}
+
+@keyframes cards-animate{
+	0%{ opacity: 0%; }
+	50%{ opacity: 0%; }
+	100%{ opacity: 100%; }
+}
+/*******Animation for svg popups*******/
+@keyframes popup-animate{
+	0%{ 
+		width: 0px; height: 0px; 
+		font-size: 0pt; 
+	}
+	99%{ font-size: 0pt; }
+	100%{ 
+		width: 120px; 
+		height: 140px; 
+		font-size: 12pt; 
+	}
+}
+/*******cards border animation*******/
+@keyframes anime{
+	0%{ 
+		width: 0px; 
+		height: 0px; 
+		border-top-color: #66FDFF; 
+		border-right-color: transparent; 
+		border-bottom-color: transparent; 
+		border-left-color: transparent; 
+	}
+	50%{ 
+		width: 100%; 
+		height: 0px; 
+		border-top-color: #66FDFF; 
+		border-right-color: #66FDFF; 
+		border-bottom-color: transparent; 
+		border-left-color: transparent; 
+	}
+	100%{ 
+		width: 70%; height: 78%; 
+		border-top-color: #66FDFF; 
+		border-right-color: #66FDFF; 
+		border-bottom-color: #66FDFF; 
+		border-left-color: #66FDFF; 
+	}
+}
+
+
+/************************************************Default/ Global props************************************************/
+*{
+	margin: 0px;
+	padding: 0px;
+	color: #000000;
+	font-family: 'KoHo', sans-serif; 
+	font-weight: 600;
+	font-size: 12pt; 
+	justify-content: center;
+	position: relative;
+
+	/*Properties to disable text selection*/
+	-ms-user-select: none; 
+	-webkit-user-select: none; 
+	-moz-user-select: none; 
+	-khtml-user-select: none; 
+	user-select: none;
+}
+
+body{
+	min-height: 120vh; 
+	margin: px;
+	padding: 0px;
+	background-color: black;  /*display: flex; flex-wrap: wrap; */
+	position: relative;
+	justify-content: center; 
+	align-items: center;
+}
+
+
+::-webkit-scrollbar { width: 15px; } 
+::-webkit-scrollbar-track {}
+::-webkit-scrollbar-track:hover { 
+	background-image: linear-gradient(to top, #EA8E68 0%, #A393F6 100%); 
+	border-radius: 10px; 
+}
+::-webkit-scrollbar-thumb { 
+	border: 2px solid #8B90F7; 
+	border-radius: 10px; 
+}
+::-webkit-scrollbar-thumb:hover { 
+	background-image: linear-gradient(to top, #ECC6B6 0%, #BBAFF7 100%); 
+}
+
+
+
+
+
+
+/***************************************************************************/
+nav { 
+	position: fixed; 
+	width: 100%;
+	height: 8%;
+	margin: 0px 0px 0px 0px; 
+	padding: 15px 0px 0px 0px; 
+
+	background: rgb(2,0,36);
+	background: linear-gradient(to bottom, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 99%, rgba(0,212,255,1) 100%);
+	z-index: 1; 
+}
+
+nav ul { 
+	width: 100%;
+	margin: 0 0 0 4.2%; padding: 0%;
+	float: left; 
+	display: flex; flex-wrap: wrap; flex-direction: row; 
+}
+nav ul li { 
+	margin: 0px;
+	padding: 0px;
+	color: #fff; 
+	font-size: 2em; 
+	margin-left: 1.4rem; margin-bottom: 2rem;  
+	list-style-type: none; 
+}
+nav ul li a{
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none; 
+	font-size: 15pt; 
+	font-family: 'KoHo', sans-serif; 
+	align-self: center; 
+	padding: 0.5em 1em;
+	border: #FFFFFF 0.05em solid; 
+	border-radius: 12px; 
+}
+
+nav ul li a.active{ 
+	color: #000000; 
+	background-color: #FFFFFF; 
+}
+nav ul li a:not(.active) { 
+	color: #4DA8FD; 
+	border: 2px solid #B3BEF8; 
+}
+
+nav ul li a:hover:not(.active) { 
+	color: #000000; 
+	background-color: #FFFFFF; 
+}
+
+/************************************************/
+
+nav ul li .navigation-drawer{
+	display: none;
+	background-image: url(none);
+	background-size: cover;
+	background-repeat: none; 
+}
+
+.dropdown{
+	display: none;
+	width: 0px;
+	margin: 0px;
+	padding: 0.5em 1em;
+	background-image: url();
+	background-size: cover;
+	background-repeat: none; 
+}
+
+/***************************************************************************/
+.zero{
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+/* This base div is an example that float: left doesn't always ensure what display flex offers. */
+.base{
+	width:90%; height:100%;
+	margin: 5%;
+	padding: 20px 0px;
+	display: flex; 
+	flex-wrap: wrap;     /*float: left;*/
+	box-shadow: 0 0 10px #9BB7FC;
+	border-radius: 10px;
+}
+
+.parent-div{ 
+	width:50%; 
+	height:80vh; 
+	display: flex; 
+	align-items: center; 
+	flex-direction: column; 
+}
+
+.divScroll { 
+	width:100%; 
+	height:80vh; 
+	overflow-x:hidden; 
+	display:flex; 
+	flex-wrap: wrap; 
+}
+
+img{ width: 100%; height: 110%; }
+
+
+/************************************************Pagination styles************************************************/
+.pagination a { 
+	color: #D7DEFD; 
+	float: left; 
+	justify-content: center; 
+	margin: 4px 0px; 
+	padding: 8px 14px;
+	font-size: 10pt; 
+	text-decoration: none; 
+	transition: background-color .3s; 
+	border-radius: 40px;
+}
+/* Style the active/current link */
+.pagination a.active { 
+	background-color: #EA8C65; 
+	box-shadow: 0 0 10px  #812702; 
+	color: #1B1919; 
+}
+/* Add a blue border color on mouse-over */
+.pagination a:hover:not(.active) { border: 2px solid #812702; }
+
+
+/* ========================= ITEM ======================= */
+.item{
+	float: left;
+	width: 120px; 
+	height: 140px;
+	margin: 3px; 
+	padding: 16px 20px;
+	border-radius: 10px; 
+	box-shadow: 0 0 5px  #437CFD;
+	display: flex; 
+	flex-wrap: wrap; 
+	position: relative; 
+	justify-content: center; 
+	align-items: flex-start;
+	animation: cards-animate 2s;
+}
+.item::before{
+	content: ' ';
+	width: 100%; 
+	height: 80%; 
+	margin: -15px; 
+	padding: 16px 20px;
+	position: absolute; 
+	border-radius: 10px;
+	display: flex; 
+	flex-wrap: wrap; 
+	position: absolute; 
+	justify-content: center;
+	background: transparent; 
+	border: 2px solid transparent; 
+	z-index: -100;
+}
+
+/* ======================== SUBITEM1 - Education ======================== */
+.subitem-on-hover1{
+	width: 0%; height: 0%;
+	margin: 0px 0px; 
+	padding: 0px 0px;
+	display: flex; 
+	flex-wrap: wrap; 
+	justify-content: center; 
+	align-items: flex-start; 
+	border-radius: 0px;
+}
+.subitem-on-hover1::after{ content:''; }
+.subitem-on-hover1:hover{ 
+	transition: background-color .3s; 
+	border: 2px solid #00078D; 
+	box-shadow: 0 0 10px #7CFBFD; 
+}
+
+/* ======================== SUBITEM2 - Medical ======================== */
+.subitem-on-hover2{
+	width: 0%; height: 0%;
+	margin: 0px 0px; 
+	padding: 0px 0px;
+	display: flex; 
+	flex-wrap: wrap; 
+	justify-content: center; 
+	align-items: flex-start; 
+	border-radius: 0px;
+}
+.subitem-on-hover2::after{ content:''; }
+.subitem-on-hover2:hover{ 
+	border: 2px solid #00078D; 
+	box-shadow: 0 0 10px #7CFBFD; 
+}
+
+/* ======================== SUBITEM3 - conventional ======================== */
+.subitem-on-hover3{
+	margin: 0px 0px; padding: 0px 0px;
+	width: 0%; 
+	height: 0%;
+	display: flex; 
+	flex-wrap: wrap; 
+	justify-content: center; 
+	align-items: flex-start; 
+	border-radius: 0px;
+}
+.subitem-on-hover3::after{ content:''; }
+.subitem-on-hover3:hover{ 
+	border: 2px solid #00078D; 
+	box-shadow: 0 0 5px #7CFBFD; 
+}
+
+
+
+
+/* ======================== Style to show subitems only when hovered on item ======================== */
+
+.item:hover::before{ animation: anime 0.2s linear forwards; }
+
+.item:hover img{ height:0px; }
+
+/*=============CHANGE IN SUBITEM1 PROPERTIES ON ITEM HOVER=============*/
+.item:hover .subitem-on-hover1{
+	width: 120%; 
+	height: 20%;
+	
+	margin: 2px 0px; 
+	padding: 0px 2px;
+	
+	display: flex; 
+	flex-wrap: wrap; 
+	justify-content: center; 
+	align-items: flex-start; 
+	
+	border-radius: 20px;
+}
+.item:hover .subitem-on-hover1::after{ 
+	font-size: 12pt; 
+	content:'Educational'; 
+	color: #FFFFFF; 
+}
+
+/*=============CHANGE IN SUBITEM2 PROPERTIES ON ITEM HOVER=============*/
+.item:hover .subitem-on-hover2{
+	margin: 2px 0px; 
+	padding: 0px 2px;
+	width: 120%; 
+	height: 20%;
+	display: flex; 
+	flex-wrap: wrap; 
+	justify-content: center; 
+	align-items: flex-start; 
+	border-radius: 20px;
+}
+
+.item:hover .subitem-on-hover2::after{ 
+	font-size: 12pt; 
+	content:'Medical'; 
+	color: #FFFFFF; 
+}
+
+/*=============CHANGE IN SUBITEM3 PROPERTIES ON ITEM HOVER=============*/
+.item:hover .subitem-on-hover3{
+	margin-top: 2px; 
+	margin-bottom: 5px; 
+	padding: 0px 2px;
+	width: 120%; 
+	height: 20%;
+	display: flex; 
+	flex-wrap: wrap; 
+	justify-content: center; 
+	align-items: flex-start; 
+	border-radius: 20px;
+}
+.item:hover .subitem-on-hover3::after{ 
+	font-size: 12pt; 
+	content:'Conventional'; 
+	color: #FFFFFF; 
+}
+
+
+
+/* ========================================================================================================================================================= */
+/* ========================================================================================================================================================= */
+
+/* div-svg & svg styles are crucial in deciding the height and width of the map.*/
+.div-svg{ width: 40%; height: 80vh; }
+svg{ 
+	width: 100%; 
+	height: 100%; 
+	animation: map-animate 1s; 
+}
+svg path{ 
+	fill: #FFFFFF; 
+	stroke: #0A0909; 
+	stroke-width: .75; 
+}
+
+/*svg path:hover{ fill: #FC9C9C; transition: 0.6s; cursor: pointer; -webkit-filter:drop-shadow(12px 4px 3px #057BE8); filter: drop-shadow( 12px 4px 3px #057BE8); }*/
+svg path:hover{ 
+	fill: #FC9C9C; 
+	transition: 0.6s; 
+	cursor: pointer; -webkit-filter:drop-shadow(8px 4px 3px #615C5B); 
+	filter: drop-shadow( 8px 4px 3px #615C5B); 
+}
+
+svg text{ 
+	fill: #FFFFFF; 
+	stroke: #0A0909; 
+	stroke-width: .75; 
+}
+svg text:hover{ 
+	fill: #FC9C9C; 
+	transition: 0.2s; 
+	cursor: pointer; 
+}
+
+
+
+/************************************************Styles for popups************************************************/
+.svg-item{
+	width: 140px; height: 160px; 
+	margin-top: -400px; 
+	margin-left: 35%; /* Media query needed */
+	padding: 40px 40px;
+	
+	background: rgba(255, 255, 255, 0.3);
+	
+	border-top: 2px solid #FFFFFF; 
+	border-left: 2px solid #FFFFFF; 
+	border-radius: 10px;      
+	box-shadow: 0 0 10px  #6895FB;
+	
+	backdrop-filter: blur(5px);
+	animation: popup-animate 0.5s;
+
+	display: none; 
+	flex-wrap: wrap; 
+	justify-content: center; 
+	position: absolute;
+}
+.svg-subitem1, 
+.svg-subitem2, 
+.svg-subitem3{
+	width: 120%; 
+	height: 20%;
+
+	margin-left: -12px; 
+	margin-bottom: 5px; 
+	padding: 0px 2px;
+
+	display: flex; 
+	flex-wrap: wrap; 
+	justify-content: center; 
+	align-items: flex-start; 
+	background-color: rgb(176, 207, 254, 0.6);
+	border-radius: 20px; 
+	border: 2px solid #031688; 
+	box-shadow: 0 0 10px #8F99FE; 
+	text-align: center;
+} 
+.svg-subitem1::after{ content: 'Educational'; }
+
+.svg-subitem2::after{ content: 'Medical'; }
+
+.svg-subitem3::after{ content: 'Conventional'; }
+
+.svg-close{
+	width: 80%; 
+	height: 20%; 
+
+	margin-left: 10%; 
+	margin-bottom: 5px; 
+	padding: 0px 1px;
+
+	border:  2px solid #031688; 
+	border-radius: 20px;
+	
+	display: flex; 
+	flex-wrap: wrap; 
+	justify-content: center; 
+	align-items: flex-start; 
+	
+	text-align: center;
+} 
+.svg-close::after{ content: 'Close'; }
+
+
+
+
+
+
+/***************************************** 1st page districts *****************************************/
+.span-alipurduar{width: 0%; height: 0%;} .span-alipurduar::after{ content:''; }
+.item:hover .span-alipurduar{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+.item:hover .span-alipurduar::after { content: 'Alipurduar'; font-size: 12pt; color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+
+.span-bankura{width: 0%; height: 0%;} .span-bankura::after{ content:''; }
+.item:hover .span-bankura{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+.item:hover .span-bankura::after { content: 'Bankura'; font-size: 12pt; color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+
+.span-birbhum{width: 0%; height: 0%;} .span-birbhum::after{ content:''; }
+.item:hover .span-birbhum{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+.item:hover .span-birbhum::after { content: 'Birbhum'; font-size: 12pt; color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+
+.span-cooch-behar{width: 0%; height: 0%;} .span-cooch-behar::after{ content:''; }
+.item:hover .span-cooch-behar{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+.item:hover .span-cooch-behar::after { content: 'Cooch Behar'; font-size: 12pt; color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+
+.span-darjeeling{width: 0%; height: 0%;} .span-darjeeling::after{ content:''; }
+.item:hover .span-darjeeling{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+.item:hover .span-darjeeling::after { content: 'Darjeeling'; font-size: 12pt; color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+
+.span-east-bardhaman{width: 0%; height: 0%;} .span-east-bardhaman::after{ content:''; }
+.item:hover .span-east-bardhaman{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; text-align: center; }
+.item:hover .span-east-bardhaman::after { content: 'East Bardhaman'; font-size: 12pt; text-align:center; color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+
+.span-east-medinipur{width: 0%; height: 0%;} .span-east-medinipur::after{ content:''; }
+.item:hover .span-east-medinipur{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; text-align: center; }
+.item:hover .span-east-medinipur::after { content: 'East Medinipur'; font-size: 12pt; color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+
+.span-hooghly{width: 0%; height: 0%;} .span-hooghly::after{ content:''; }
+.item:hover .span-hooghly{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; text-align: center; align-items: flex-start; }
+.item:hover .span-hooghly::after { content: 'Hooghly'; font-size: 12pt; color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+
+
+
+
+/***************************************** 2nd page districts *****************************************/
+.span-howrah{width: 0%; height: 0%;} .span-howrah::after{ content:''; }
+.item:hover .span-howrah{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+.item:hover .span-howrah::after { content: 'Howrah'; font-size: 12pt; color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+.item:hover .span-howrah:hover::after{ color: #CDD2FA; }
+
+.span-jalpaiguri{width: 0%; height: 0%;} .span-jalpaiguri::after{ content:''; }
+.item:hover .span-jalpaiguri{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+.item:hover .span-jalpaiguri::after { content: 'Jalpaiguri'; font-size: 12pt; color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+.item:hover .span-jalpaiguri:hover::after{ color: #CDD2FA; }
+
+.span-jhargram{width: 0%; height: 0%;} .span-jhargram::after{ content:''; }
+.item:hover .span-jhargram{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+.item:hover .span-jhargram::after { content: 'Jhargram'; font-size: 12pt; color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+.item:hover .span-jhargram:hover::after{ color: #CDD2FA; }
+
+.span-kalimpong{width: 0%; height: 0%;} .span-kalimpong::after{ content:''; }
+.item:hover .span-kalimpong{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+.item:hover .span-kalimpong::after { content: 'Kalimpong'; font-size: 12pt; color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+.item:hover .span-kalimpong:hover::after{ color: #CDD2FA; }
+
+.span-kolkata{width: 0%; height: 0%;} .span-kolkata::after{ content:''; }
+.item:hover .span-kolkata{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+.item:hover .span-kolkata::after { content: 'Kolkata'; font-size: 12pt; color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+.item:hover .span-kolkata:hover::after{ color: #CDD2FA; }
+
+.span-malda{width: 0%; height: 0%;} .span-malda::after{ content:''; }
+.item:hover .span-malda{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+.item:hover .span-malda::after { content: 'Malda'; font-size: 12pt; color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+.item:hover .span-malda:hover::after{ color: #CDD2FA; }
+
+.span-murshidabad{width: 0%; height: 0%;} .span-murshidabad::after{ content:''; }
+.item:hover .span-murshidabad{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+.item:hover .span-murshidabad::after { content: 'Murshidabad'; font-size: 12pt; color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+.item:hover .span-murshidabad:hover::after{ color: #CDD2FA; }
+
+.span-nadia{width: 0%; height: 0%;} .span-nadia::after{ content:''; }
+.item:hover .span-nadia{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+.item:hover .span-nadia::after { content: 'Nadia'; font-size: 12pt; color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+.item:hover .span-nadia:hover::after{ color: #CDD2FA; }
+
+
+
+/***************************************** 3rd page districts *****************************************/
+.span-north-24-parganas{width: 0%; height: 0%;} .span-north-24-parganas::after{ content:''; }
+.item:hover .span-north-24-parganas{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+.item:hover .span-north-24-parganas::after { content: 'North 24 Parganas'; font-size:12pt; text-align: center; color:#CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+
+.span-north-dinajpur{width: 0%; height: 0%;} .span-north-dinajpur::after{ content:''; }
+.item:hover .span-north-dinajpur{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+.item:hover .span-north-dinajpur::after { content: 'North Dinajpur'; font-size: 12pt; text-align: center; color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+
+.span-purulia{width: 0%; height: 0%;} .span-purulia::after{ content:''; }
+.item:hover .span-purulia{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+.item:hover .span-purulia::after { content: 'Purulia'; font-size: 12pt;color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+
+.span-south-24-parganas{width: 0%; height: 0%;} .span-south-24-parganas::after{ content:''; }
+.item:hover .span-south-24-parganas{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+.item:hover .span-south-24-parganas::after { content: 'South 24 Parganas'; text-align:center; font-size:12pt; text-align: center; color:#CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+
+.span-south-dinajpur{width: 0%; height: 0%;} .span-south-dinajpur::after{ content:''; }
+.item:hover .span-south-dinajpur{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+.item:hover .span-south-dinajpur::after { content: 'South Dinajpur'; font-size: 12pt; text-align: center; color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+
+.span-west-bardhaman{width: 0%; height: 0%;} .span-west-bardhaman::after{ content:''; }
+.item:hover .span-west-bardhaman{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+.item:hover .span-west-bardhaman::after { content: 'West Bardhaman'; font-size: 12pt; text-align: center; color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+
+.span-west-medinipur{width: 0%; height: 0%;} .span-west-medinipur::after{ content:''; }
+.item:hover .span-west-medinipur{ width: 140%; height: 25%; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+.item:hover .span-west-medinipur::after { content: 'West Medinipur'; font-size: 12pt; text-align: center; color: #CDD2FA; text-shadow: 0 0 10px #3AEFFF; }
+
+
+
+
+
+
+
+
+/***************************************** Media queries *****************************************/
+/* Not compatiable for ipad & ipad pro */
+
+/* Wider Screens 2 */
+@media (max-width: 1020px){
+	html{ font-size: 10pt; }
+
+	/*Style for responsive nav-bar*/
+	nav{ float: right; }
+	nav ul{ width: 100%; height: 0px; margin: 0% 0% 0% -50%; }
+	nav ul li { width: 0%; height: 0%; position: relative; }
+
+	nav ul li a{ 
+		display: none; 
+		font-size: 0pt; 
+		border: 2px solid #75F8FD;
+		text-align: center;
+		border-radius: 10px;
+	}
+	nav ul li a:not(.active) { color: #4DA8FD; border: 2px solid #75F8FD; }
+	nav ul li a:hover:not(.active) { color: #000000; background-color: #000000; }
+
+
+	nav ul li ul{
+		display: block;
+		position: absolute;
+	}
+
+	nav ul li ul li {
+		width: 160px;
+		height: auto;
+		font-size: 10pt;
+	}
+
+	nav ul li ul li a{
+		display: block;
+		position: absolute;
+		font-size: 10pt;
+	}
+
+	nav ul li .navigation-drawer{
+		display: block;
+		width: 40px;
+		height: 40px;
+		margin: 0% 0% 0 20%;
+		padding: 0% 0% 0 100px;
+		padding-right: 100px;
+		background-image: url(../img/logo/nav-drawer-white.png);
+		background-size: 100%;
+		border: 2px solid black;
+		padding: 0.5em 1em;
+	}
+
+	@keyframes dropdown-animation{
+		  0%{ width: 0px; height: 0px; font-size: 0pt; }
+		100%{ width: 150px; height: 40px; font-size: 12pt; }
+	}
+	.dropdown{
+		/*display: block;*/
+		display: none;
+		position: relative;
+		background-color: black;
+		width: 150px;
+		height: 40px;
+		margin: 0px 0px 0px 0px;
+		padding: .2em 0em;
+		border-radius: 50px solid black;
+		font-size: 15pt;
+		animation: dropdown-animation 1s;
+	}
+
+	/*Style for general body*/
+	.parent-div{ margin-left: 0%; width: 100%; height: 80%; }
+	.divScroll{ height: 100%; justify-content: space-around;}
+	.item{ width: 15%; height: 120px; }
+	.item:hover .subitem-on-hover1::after{ font-size: 9pt; }
+	.item:hover .subitem-on-hover2::after{ font-size: 9pt; }
+	.item:hover .subitem-on-hover3::after{ font-size: 9pt; }
+
+	.item::before{ width: 100%; height: 80%; }
+
+			.item:hover .span-alipurduar::after { font-size: 10pt; }
+			.item:hover .span-bankura::after { font-size: 10pt; }
+			.item:hover .span-birbhum::after { font-size: 10pt; }
+			.item:hover .span-cooch-behar::after { font-size: 10pt; }
+			.item:hover .span-darjeeling::after { font-size: 10pt; }
+			.item:hover .span-east-bardhaman::after { font-size: 10pt; }
+			.item:hover .span-east-medinipur::after { font-size: 10pt; }
+			.item:hover .span-hooghly::after { font-size: 10pt; }
+
+			.item:hover .span-howrah::after { font-size: 10pt; }
+			.item:hover .span-jalpaiguri::after { font-size: 10pt; }
+			.item:hover .span-jhargram::after { font-size: 10pt; }
+			.item:hover .span-kalimpong::after { font-size: 10pt; }
+			.item:hover .span-kolkata::after { font-size: 10pt; }
+			.item:hover .span-malda::after { font-size: 10pt; }
+			.item:hover .span-murshidabad::after { font-size: 10pt; }
+			.item:hover .span-nadia::after { font-size: 10pt; }
+
+			.item:hover .span-north-24-parganas::after { font-size: 8pt; }
+			.item:hover .span-north-dinajpur::after { font-size: 8pt; }
+			.item:hover .span-purulia::after { font-size: 10pt; }
+			.item:hover .span-south-24-parganas::after { font-size: 8pt; }
+			.item:hover .span-south-dinajpur::after { font-size: 8pt; }
+			.item:hover .span-west-bardhaman::after { font-size: 8pt; }
+			.item:hover .span-west-medinipur::after { font-size: 8pt; }
+
+	.div-svg{ width: 100%; }
+	svg{ width: 100%; height: 100%; }
+}
+
+/* Wider Screens 2 */
+/*@media (max-width: 920px){  }*/
+
+/* Wider Screens 1 */
+@media (max-width: 740px){
+	html{ font-size: 10pt; }
+
+	.parent-div{ margin-left: 0%; width: 100%; height: 80%; }
+	.divScroll{ height: 100%; justify-content: space-around;}
+	.item{ width: 15%; height: 100px; }
+	.item:hover .subitem-on-hover1::after{ font-size: 10pt; }
+	.item:hover .subitem-on-hover2::after{ font-size: 10pt; }
+	.item:hover .subitem-on-hover3::after{ font-size: 10pt; }
+
+	@keyframes anime{
+		  0%{ width: 0px; height: 0px; }
+		 50%{ width: 80%; height: 0px; }
+		100%{ width: 70%; height: 75%; }
+
+	}
+	/*.item::before{ width: 100%; height: 80%; }*/
+
+	.div-svg{ width: 100%; }
+	svg{ width: 100%; height: 100%; }
+}
+
+/* Surface Duo */
+/*@media (max-width: 540px){*/
+@media (max-width: 640px){
+	html{ font-size: 10pt; }
+
+	.parent-div{ margin-left: 0%; width: 100%; height: 60%; }
+	.divScroll{ height: 100%; justify-content: space-around;}
+	.item{ width: 15%; height: 80px; }
+	.item:hover .subitem-on-hover1::after{ font-size: 10pt; }
+	.item:hover .subitem-on-hover2::after{ font-size: 10pt; }
+	.item:hover .subitem-on-hover3::after{ font-size: 10pt; }
+
+	@keyframes anime{
+		  0%{ width: 0px; height: 0px; }
+		 50%{ width: 80%; height: 0px; }
+		100%{ width: 65%; height: 70%; }
+	}
+
+	.div-svg{ width: 100%; }
+	svg{ width: 100%; height: 100%; }
+}
+
+/* ?? */
+@media (max-width: 520px){
+	.parent-div{ margin-left: 0%; width: 100%; height: 80%;}
+	.item{ width: 20%; height: 80px; margin-left:1%; }
+
+	@keyframes anime{
+		  0%{ width: 0px; height: 0px; }
+		 50%{ width: 80%; height: 0px; }
+		100%{ width: 65%; height: 70%; }
+	}
+
+	.div-svg{ width: 100%; }
+	svg{ width: 100%; height: 90vh;  }
+	.svg-item{ margin-left: 28%; }
+}
+
+/* iphone 6 / 7/ 8 plus */
+@media (max-width: 420px){
+	html{ font-size: 10pt; }
+
+	.parent-div{ width: 100%; height: 100%;}
+	.item{ width: 20%; height: 90px; margin-left:5%; }
+
+	.div-svg{ width: 100%; }
+	svg{ width: 100%; height: 90vh; }
+	.svg-item{ margin-left: 25%; }
+}
+
+/* Pixel 2 XL */
+/*@media (max-width: 420px) and (max-height: 830px){}
+
+/* iphone X */
+@media (max-width: 380px)  and (max-height: 812px) {
+	 html{ font-size: 10pt; }
+	.item{ width: 25%; height: 70px; margin-left: 3%; margin-top: 2%;margin-bottom: 2%; }
+
+	@keyframes anime{
+		0%{ width: 0px; height: 0px; }
+		50%{ width: 80%; height: 0px; }
+		100%{ width: 62%; height: 65%; }
+	}
+
+	.svg-item{ margin-left: 22%; }
+}
+
+ /*iphone 6 / 7 / 8  */  /* Not best aligned when pixel2XL design added. */
+@media (max-width: 380px) and (max-height: 670px) {
+	.divScroll{  height: 100%; }
+	.item{ width: 25%; height: 70px; margin-left: 3%; margin-top: 2%;margin-bottom: 2%;}
+
+	@keyframes anime{
+		  0%{ width: 0px; height: 0px; }
+		 50%{ width: 80%; height: 0px; }
+		100%{ width: 62%; height: 62%; }
+	}
+}
+
+/* Galaxy fold */
+@media (max-width: 300px){
+	.divScroll{  height: 100%; }
+	.item{ width: 25%; height: 75px; margin-left: 3%; margin-top: 2%;margin-bottom: 2%;}
+
+	@keyframes anime{
+		  0%{ width: 0px; height: 0px; }
+		 50%{ width: 80%; height: 0px; }
+		100%{ width: 62%; height: 65%; }
+	}
+}
