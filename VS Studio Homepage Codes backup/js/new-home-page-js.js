@@ -22,8 +22,8 @@ function openContact(media){
 	if(nameOfPersonGlobal==="shourja" ) 
 		if(media==='email') 
 			window.location.href='https://mail.google.com/mail/u/1/?view=cm&fs=1&to=royshourjaofficial@gmail.com&tf=1';
-		else if (media==='linkedin') window.location.href='https://www.youtube.com/';
-		else if (media==='github') window.location.href='https://www.google.com/';
+		else if (media==='linkedin') window.location.href='https://www.linkedin.com/in/shourja-roy-36a1a9202/';
+		else if (media==='github') window.location.href='https://github.com/Shourja-Roy/Final-Year-Project';
 
 	if(nameOfPersonGlobal==="divya" ) 
 		if(media==='email')
@@ -33,13 +33,13 @@ function openContact(media){
 
 	if(nameOfPersonGlobal==="aafreen" ) 
 		if(media==='email') 
-			window.location.href='#';
-		else if (media==='linkedin') window.location.href='#';
+			window.location.href='https://mail.google.com/mail/u/1/?view=cm&fs=1&to=aafrin61299@gmail.com';
+		else if (media==='linkedin') window.location.href='https://www.linkedin.com/in/aafrin-parween-05593a1a9';
 		else if (media==='github') window.location.href='https://github.com/AafrinParween';
 
 	if(nameOfPersonGlobal==="shreeparna" ) 
 		if(media==='email') 
-			window.location.href='#';
+			window.location.href='https://mail.google.com/mail/u/1/?view=cm&fs=1&to=ghoshshreeparna@gmail.com';
 		else if (media==='linkedin') window.location.href='#';
 		else if (media==='github') window.location.href='#';
 
@@ -51,10 +51,11 @@ function openContact(media){
 
 	if(nameOfPersonGlobal==="bristi" ) 
 		if(media==='email') 
-			window.location.href='#';
-		else if (media==='linkedin') window.location.href='#';
+			window.location.href='https://mail.google.com/mail/u/1/?view=cm&fs=1&to=bristimazumdar2@gmail.com';
+		else if (media==='linkedin') window.location.href='https://www.linkedin.com/in/bristi-mazumdar-590a601b3/';
 		else if (media==='github') window.location.href='#';
 }
+
 
 
 
